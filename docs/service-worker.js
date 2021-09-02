@@ -33,4 +33,4 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/https:\/\/c780-150-249-204-198.ngrok.io\/api\/.*/, new workbox.strategies.NetworkFirst({ "cacheName":"api-cache", plugins: [new workbox.expiration.Plugin({ maxEntries: 10, maxAgeSeconds: 300, purgeOnQuotaError: false }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');
+workbox.routing.registerRoute(/\/api\/.+/, new workbox.strategies.NetworkFirst({ "cacheName":"api", plugins: [new workbox.expiration.Plugin({ maxAgeSeconds: 86400, purgeOnQuotaError: false }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');

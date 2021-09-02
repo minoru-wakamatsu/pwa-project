@@ -14,13 +14,12 @@ module.exports = {
     workboxOptions: {
       runtimeCaching: [
         {
-          urlPattern: /https:\/\/c780-150-249-204-198.ngrok.io\/api\/.*/,
+          urlPattern: /\/api\/.+/,
           handler: "networkFirst",
           options: {
-            cacheName: "api-cache",
+            cacheName: "api",
             expiration: {
-              maxEntries: 10,
-              maxAgeSeconds: 300,
+              maxAgeSeconds: 60 * 60 * 24,
             },
             cacheableResponse: {
               statuses: [0, 200],
