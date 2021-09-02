@@ -1,6 +1,10 @@
 module.exports = {
-  publicPath:
-    process.env.NODE_ENV === "production"
-      ? "./" //任意
-      : "./",
+  //   publicPath: {
+  //     process.env.NODE_ENV === "production"
+  //     ? "./" //任意
+  //     : "./",
+  //   },
+  devServer: {
+    proxy: "http://localhost:3000",
+  },
 };
