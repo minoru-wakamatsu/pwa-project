@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pwa-project/precache-manifest.f6e0d921f50b458d2718646f96908cdb.js"
+  "/pwa-project/precache-manifest.e98b8d3507f4d4b076e588cf9ef4f354.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pwa-projct"});
@@ -32,3 +32,5 @@ self.addEventListener('message', (event) => {
  */
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerRoute(/https:\/\/c780-150-249-204-198.ngrok.io\/api\/.*/, new workbox.strategies.NetworkFirst({ "cacheName":"api-cache", plugins: [new workbox.expiration.Plugin({ maxEntries: 10, maxAgeSeconds: 300, purgeOnQuotaError: false }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');
