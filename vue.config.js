@@ -7,5 +7,6 @@ module.exports = {
   devServer: {
     proxy: "http://localhost:3000",
   },
-  publicPath: "./",
+  publicPath: "/pwa-project",
+  outputDir: "docs",
 };
