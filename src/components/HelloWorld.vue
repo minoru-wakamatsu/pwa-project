@@ -65,7 +65,7 @@ export default {
       title: "記事のタイトル",
       text: "記事の本文",
       message: "保存時の結果などを表示",
-      apiBaseUrl: "https://c780-150-249-204-198.ngrok.io",
+      apiBaseUrl: "https://0fab-150-249-204-198.ngrok.io",
       //apiBaseUrl: "http://localhost:3000",
     };
   },
@@ -75,11 +75,9 @@ export default {
   },
   methods: {
     async getArticles() {
-      await axios
-        .get(this.apiBaseUrl + "/api/v1/article")
-        .then((response) => {
-          this.articles = response.data;
-        });
+      await axios.get(this.apiBaseUrl + "/api/v1/article").then((response) => {
+        this.articles = response.data;
+      });
     },
     async getUsers() {
       await axios.get(this.apiBaseUrl + "/api/v1/user").then((response) => {
