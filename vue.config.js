@@ -5,8 +5,8 @@ module.exports = {
   //     : "./",
   //   },
   devServer: {
-    //proxy: "http://localhost:3000",
-    proxy: "https://aac4-150-249-204-198.ngrok.io",
+    proxy: "http://localhost:3000",
+    //proxy: "https://aac4-150-249-204-198.ngrok.io",
   },
   publicPath: "/pwa-project",
   outputDir: "docs",

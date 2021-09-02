@@ -163,12 +163,12 @@ export default {
   },
   methods: {
     async getArticles() {
-      await axios.get("/api/v1/article").then((response) => {
+      await axios.get("https://aac4-150-249-204-198.ngrok.io/api/v1/article").then((response) => {
         this.articles = response.data;
       });
     },
     async getUsers() {
-      await axios.get("/api/v1/user").then((response) => {
+      await axios.get("https://aac4-150-249-204-198.ngrok.io/api/v1/user").then((response) => {
         this.users = response.data;
       });
     },
