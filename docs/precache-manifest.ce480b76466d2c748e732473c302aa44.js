@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/pwa-project/img/logo.82b9c7a5.png"
   },
   {
-    "revision": "60fab558ab86c383aee516d6b3925e0b",
+    "revision": "8a735402a3d8f924a7ed00eae7474eb1",
     "url": "/pwa-project/index.html"
   },
   {
