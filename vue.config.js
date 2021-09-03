@@ -20,6 +20,16 @@ module.exports = {
             },
           },
         },
+        {
+          urlPattern: /https:\/\/24d5-2400-2412-2e3-8300-955f-bcac-20f3-de13.ngrok.io\/api\/v1\/.*/,
+          method: "POST",
+          handler: "networkOnly",
+          options: {
+            backgroundSync: {
+              name: "medipad-api-que",
+            },
+          },
+        },
       ],
     },
   },
