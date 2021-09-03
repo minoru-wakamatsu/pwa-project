@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pwa-project/precache-manifest.07f1d74593d98522e89c83b3d2816f20.js"
+  "/pwa-project/precache-manifest.079c136a75ed9792549a6371b6a06930.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "api-cache-v1"});
+workbox.core.setCacheNameDetails({prefix: "pwa-projct"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
@@ -33,4 +33,4 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/\/api\/.+/, new workbox.strategies.NetworkFirst({ "cacheName":"api", plugins: [new workbox.expiration.Plugin({ maxEntries: 20, maxAgeSeconds: 2592000, purgeOnQuotaError: false }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');
+workbox.routing.registerRoute(/\/api\/.*/, new workbox.strategies.NetworkFirst({ "cacheName":"medipad-api-cache", plugins: [new workbox.expiration.Plugin({ maxEntries: 10, maxAgeSeconds: 300, purgeOnQuotaError: false }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');
