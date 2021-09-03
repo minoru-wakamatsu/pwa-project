@@ -1,29 +1,8 @@
-
-const { GenerateSW } = require('workbox-webpack-plugin')
+const { GenerateSW } = require("workbox-webpack-plugin");
 
 module.exports = {
   publicPath: "/pwa-project",
   outputDir: "docs",
-//   pwa: {
-//     workboxOptions: {
-//       runtimeCaching: [
-//         {
-//           urlPattern: /\/api\/.+/,
-//           handler: "networkFirst",
-//           options: {
-//             cacheName: "api",
-//             expiration: {
-//               maxAgeSeconds: 60 * 60 * 24,
-//             },
-//             cacheableResponse: {
-//               statuses: [0, 200],
-//             },
-//           },
-//         },
-//       ],
-//     },
-//   },
-
   configureWebpack: (config) => {
     config.plugins.push(
       new GenerateSW({
