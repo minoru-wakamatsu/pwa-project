@@ -65,7 +65,7 @@ export default {
       title: "記事のタイトル",
       text: "記事の本文",
       message: "保存時の結果などを表示",
-      apiBaseUrl: "https://0fab-150-249-204-198.ngrok.io",
+      apiBaseUrl: "https://24d5-2400-2412-2e3-8300-955f-bcac-20f3-de13.ngrok.io",
       //apiBaseUrl: "http://localhost:3000",
     };
   },
