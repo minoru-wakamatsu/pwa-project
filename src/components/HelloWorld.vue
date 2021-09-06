@@ -3,6 +3,7 @@
     <h1>{{ msg }}</h1>
 
     <div>test1</div>
+    <div>test2</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
