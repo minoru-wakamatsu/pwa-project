@@ -8,6 +8,7 @@
     <div>
       <input type="button" value="データ更新" />
       <input type="button" value="オンラインか？" v-on:click="isOnline" />
+      <input type="button" value="同期" v-on:click="onLineOnSave" />
     </div>
 
     <div>
@@ -82,6 +83,9 @@ export default {
       } else {
         alert("オフライン");
       }
+    },
+    onLineOnSave() {
+      alert("オンラインなのでサーバに保存します。");
     },
     async getArticles() {
       await axios.get(this.apiBaseUrl + "/api/v1/article").then((response) => {
