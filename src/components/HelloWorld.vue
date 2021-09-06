@@ -7,7 +7,7 @@
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
     <div>
-      <input type="button" value="データ更新" v-on:click="reload" />
+      <input type="button" value="データ更新" v-on:click="reflush" />
       <input type="button" value="オンラインか？" v-on:click="isOnline" />
       <input type="button" value="同期" v-on:click="onLineOnSave" />
     </div>
@@ -87,7 +87,7 @@ export default {
     onLineOnSave() {
       alert("オンラインなのでサーバに保存します。");
     },
-    reload() {
+    reflush() {
       console.log("reload");
       window.navigator.serviceWorker
         .getRegistrations()
