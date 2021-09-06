@@ -2,9 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>test1</div>
-    <div>test2</div>
-    <div>test3</div>
+    <div>hoge</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
@@ -94,6 +92,7 @@ export default {
         .getRegistrations()
         .then((registrations) => {
           for (let registration of registrations) {
+            console.log("unregister");
             registration.unregister();
           }
         });
