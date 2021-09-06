@@ -4,6 +4,7 @@
 
     <div>test1</div>
     <div>test2</div>
+    <div>test3</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
