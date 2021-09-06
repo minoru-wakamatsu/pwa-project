@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>minoru</div>
+    <div>minoru.wakamatsu</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
