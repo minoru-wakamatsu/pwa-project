@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/pwa-project/precache-manifest.ce480b76466d2c748e732473c302aa44.js"
+  "/pwa-project/precache-manifest.f40e3fd456217cd93a57b666108b1018.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pwa-projct"});
@@ -28,5 +28,5 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/https:\/\/24d5-2400-2412-2e3-8300-955f-bcac-20f3-de13.ngrok.io\/api\/v1\/.*/, workbox.strategies.networkFirst({ "cacheName":"medipad-api-cache", plugins: [new workbox.expiration.Plugin({"maxEntries":10,"maxAgeSeconds":300,"purgeOnQuotaError":false}), new workbox.cacheableResponse.Plugin({"statuses":[0,200]})] }), 'GET');
-workbox.routing.registerRoute(/https:\/\/24d5-2400-2412-2e3-8300-955f-bcac-20f3-de13.ngrok.io\/api\/v1\/.*/, workbox.strategies.networkOnly({ plugins: [new workbox.backgroundSync.Plugin("medipad-api-que")] }), 'POST');
+workbox.routing.registerRoute(/https:\/\/8045-2400-2412-2e3-8300-88c5-e1ff-772f-2e6f.ngrok.io\/api\/v1\/.*/, workbox.strategies.networkFirst({ "cacheName":"medipad-api-cache", plugins: [new workbox.expiration.Plugin({"maxEntries":10,"maxAgeSeconds":300,"purgeOnQuotaError":false}), new workbox.cacheableResponse.Plugin({"statuses":[0,200]})] }), 'GET');
+workbox.routing.registerRoute(/https:\/\/8045-2400-2412-2e3-8300-88c5-e1ff-772f-2e6f.ngrok.io\/api\/v1\/.*/, workbox.strategies.networkOnly({ plugins: [new workbox.backgroundSync.Plugin("medipad-api-que")] }), 'POST');
