@@ -89,6 +89,13 @@ export default {
       alert("オンラインなのでサーバに保存します。");
     },
     reload() {
+      window.navigator.serviceWorker
+        .getRegistrations()
+        .then((registrations) => {
+          for (let registration of registrations) {
+            registration.unregister();
+          }
+        });
       window.location.reload(true);
     },
     async getArticles() {
