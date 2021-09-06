@@ -88,6 +88,7 @@ export default {
       alert("オンラインなのでサーバに保存します。");
     },
     reload() {
+      console.log("reload");
       window.navigator.serviceWorker
         .getRegistrations()
         .then((registrations) => {
