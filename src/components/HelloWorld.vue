@@ -7,6 +7,7 @@
     </div>
     <div>
       <input type="button" value="データ更新" />
+      <input type="button" value="オンラインか？" v-on:click="isOnline" />
     </div>
 
     <div>
@@ -65,7 +66,8 @@ export default {
       title: "記事のタイトル",
       text: "記事の本文",
       message: "保存時の結果などを表示",
-      apiBaseUrl: "https://8045-2400-2412-2e3-8300-88c5-e1ff-772f-2e6f.ngrok.io",
+      apiBaseUrl:
+        "https://8045-2400-2412-2e3-8300-88c5-e1ff-772f-2e6f.ngrok.io",
       //apiBaseUrl: "http://localhost:3000",
     };
   },
@@ -74,6 +76,13 @@ export default {
     this.getUsers();
   },
   methods: {
+    isOnline() {
+      if (navigator.onLine) {
+        alert("オンライン");
+      } else {
+        alert("オフライン");
+      }
+    },
     async getArticles() {
       await axios.get(this.apiBaseUrl + "/api/v1/article").then((response) => {
         this.articles = response.data;
