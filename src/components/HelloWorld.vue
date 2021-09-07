@@ -93,9 +93,11 @@ export default {
           .then((registrations) => {
             for (let registration of registrations) {
               //registration.update();
-              registration.sync();
+              //registration.sync();
+              registration.update();
             }
           });
+        window.location.reload(true);
       } else {
         alert("オフラインのため同期できません。");
       }
