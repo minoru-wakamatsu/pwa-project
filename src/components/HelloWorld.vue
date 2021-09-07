@@ -68,7 +68,8 @@ export default {
       title: "記事のタイトル",
       text: "記事の本文",
       message: "保存時の結果などを表示",
-      apiBaseUrl: "https://f163-2400-2412-2e3-8300-6087-d43e-10a6-b352.ngrok.io",
+      apiBaseUrl:
+        "https://f163-2400-2412-2e3-8300-6087-d43e-10a6-b352.ngrok.io",
       //apiBaseUrl: "http://localhost:3000",
     };
   },
@@ -85,7 +86,18 @@ export default {
       }
     },
     onLineOnSave() {
-      alert("オンラインなのでサーバに保存します。");
+      if (navigator.onLine) {
+        alert("オンラインなのでサーバに保存します。");
+        window.navigator.serviceWorker
+          .getRegistrations()
+          .then((registrations) => {
+            for (let registration of registrations) {
+              registration.update();
+            }
+          });
+      } else {
+        alert("オフラインのため同期できません。");
+      }
     },
     reflush() {
       console.log("reload");

@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/pwa-project/js/about.1075e501.js"
   },
   {
-    "revision": "5e43c2a7d696fd3dbea5",
-    "url": "/pwa-project/css/app.7e33ff52.css"
+    "revision": "a992db828a2303bb790c",
+    "url": "/pwa-project/css/app.6979ee6d.css"
   },
   {
-    "revision": "5e43c2a7d696fd3dbea5",
-    "url": "/pwa-project/js/app.c739947f.js"
+    "revision": "a992db828a2303bb790c",
+    "url": "/pwa-project/js/app.362df88e.js"
   },
   {
     "revision": "c4603bb1116058997b17",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/pwa-project/img/logo.82b9c7a5.png"
   },
   {
-    "revision": "bc24a6217f555aebdb6e71bed51dc848",
+    "revision": "024a3156c0b78c5a8710a4182205adfa",
     "url": "/pwa-project/index.html"
   },
   {
