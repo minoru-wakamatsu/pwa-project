@@ -7,7 +7,7 @@ module.exports = {
     workboxOptions: {
       runtimeCaching: [
         {
-          urlPattern: /https:\/\/987d-2400-2412-2e3-8300-44e6-dbda-186-8918.ngrok.io\/api\/v1\/.*/,
+          urlPattern: /https:\/\/f163-2400-2412-2e3-8300-6087-d43e-10a6-b352.ngrok.io\/api\/v1\/.*/,
           handler: "networkFirst",
           options: {
             cacheName: "medipad-api-cache",
@@ -21,7 +21,7 @@ module.exports = {
           },
         },
         {
-          urlPattern: /https:\/\/987d-2400-2412-2e3-8300-44e6-dbda-186-8918.ngrok.io\/api\/v1\/.*/,
+          urlPattern: /https:\/\/f163-2400-2412-2e3-8300-6087-d43e-10a6-b352.ngrok.io\/api\/v1\/.*/,
           method: "POST",
           handler: "networkOnly",
           options: {
