@@ -5,7 +5,7 @@ module.exports = {
   outputDir: "docs",
   pwa: {
     skipWaiting: true,
-    clientsClaim: false,
+    clientsClaim: true,
     workboxOptions: {
       runtimeCaching: [
         {
