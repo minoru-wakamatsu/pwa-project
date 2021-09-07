@@ -74,9 +74,10 @@ export default {
       //apiBaseUrl: "http://localhost:3000",
     };
   },
-  // created() {
-
-  // },
+  created() {
+    console.log("created");
+    this.db = new Database();
+  },
   mounted() {
     this.getArticles();
     this.getUsers();
@@ -154,8 +155,9 @@ export default {
         };
 
         console.log(request);
-        var db = new Database();
-        await db.addTodo(request);
+        
+        
+        await this.db.addTodo(request);
       }
     },
   },
