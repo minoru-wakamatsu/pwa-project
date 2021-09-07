@@ -54,6 +54,7 @@
 
 <script>
 import axios from "axios";
+import { DataBase } from "../indexedDatabase.js";
 
 export default {
   name: "HelloWorld",
@@ -73,9 +74,14 @@ export default {
       //apiBaseUrl: "http://localhost:3000",
     };
   },
+  created() {
+    this.db = new DataBase();
+  },
   mounted() {
     this.getArticles();
     this.getUsers();
+
+    // indexeddb を用意する
   },
   methods: {
     isOnline() {
@@ -125,14 +131,30 @@ export default {
       });
     },
     async saveArticle() {
-      await axios
-        .post(this.apiBaseUrl + "/api/v1/article", {
-          title: this.title,
-          text: this.text,
-        })
-        .then((response) => {
-          this.message = response.data.message;
-        });
+      if (navigator.onLine) {
+        // オンラインならそのまま保存
+        await axios
+          .post(this.apiBaseUrl + "/api/v1/article", {
+            title: this.title,
+            text: this.text,
+          })
+          .then((response) => {
+            this.message = response.data.message;
+          });
+      } else {
+        // オフラインの場合は、IndexedDB にリクエストの内容を保存しておく
+        // オンラインになったタイミングで手動で保存されているリクエストを実行することで同期する
+        let request = {
+          url: this.apiBaseUrl + "/api/v1/article",
+          postdata: {
+            title: this.title,
+            text: this.text,
+          },
+        };
+
+        console.log(request);
+        await this.db.addTodo(request);
+      }
     },
   },
 };
