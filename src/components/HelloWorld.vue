@@ -74,14 +74,15 @@ export default {
       //apiBaseUrl: "http://localhost:3000",
     };
   },
-  created() {
-    this.db = new Database();
-  },
+  // created() {
+
+  // },
   mounted() {
     this.getArticles();
     this.getUsers();
 
     // indexeddb を用意する
+    this.db = new Database();
   },
   methods: {
     isOnline() {
