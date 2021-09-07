@@ -82,7 +82,7 @@ export default {
     this.getUsers();
 
     // indexeddb を用意する
-    this.db = new Database();
+    //this.db = new Database();
   },
   methods: {
     isOnline() {
@@ -154,7 +154,8 @@ export default {
         };
 
         console.log(request);
-        await this.db.addTodo("test");
+        let db = new Database();
+        await db.addTodo(request);
       }
     },
   },
