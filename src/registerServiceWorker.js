@@ -2,6 +2,11 @@
 
 import { register } from 'register-service-worker'
 
+import {Queue} from 'workbox-background-sync';
+
+const queue = new Queue('myQueueName');
+
+
 if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready () {
@@ -30,3 +35,24 @@ if (process.env.NODE_ENV === 'production') {
     }
   })
 }
+
+self.addEventListener('fetch', (event) => {
+  // Add in your own criteria here to return early if this
+  // isn't a request that should use background sync.
+  console.log('addEventListener fetch');
+  if (event.request.method !== 'POST') {
+    return;
+  }
+
+  const bgSyncLogic = async () => {
+    try {
+      const response = await fetch(event.request.clone());
+      return response;
+    } catch (error) {
+      await queue.pushRequest({request: event.request});
+      return error;
+    }
+  };
+
+  event.respondWith(bgSyncLogic());
+});
