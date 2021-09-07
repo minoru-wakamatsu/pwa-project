@@ -4,8 +4,8 @@ module.exports = {
   publicPath: "/pwa-project",
   outputDir: "docs",
   pwa: {
-    skipWaiting: true,
-    clientsClaim: false,
+    // skipWaiting: true,
+    // clientsClaim: false,
     workboxOptions: {
       runtimeCaching: [
         {
