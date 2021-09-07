@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>update10</div>
+    <div>indexeddb1</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
@@ -54,7 +54,7 @@
 
 <script>
 import axios from "axios";
-import { DataBase } from "../indexedDatabase.js";
+import Database from "../indexedDatabase.js";
 
 export default {
   name: "HelloWorld",
@@ -75,7 +75,7 @@ export default {
     };
   },
   created() {
-    this.db = new DataBase();
+    this.db = new Database();
   },
   mounted() {
     this.getArticles();
