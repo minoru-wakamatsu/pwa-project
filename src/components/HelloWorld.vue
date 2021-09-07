@@ -88,15 +88,15 @@ export default {
     onLineOnSave() {
       if (navigator.onLine) {
         alert("オンラインなのでサーバに保存します。");
-        window.navigator.serviceWorker
-          .getRegistrations()
-          .then((registrations) => {
-            for (let registration of registrations) {
-              //registration.update();
-              //registration.sync();
-              registration.update();
-            }
-          });
+        // window.navigator.serviceWorker
+        //   .getRegistrations()
+        //   .then((registrations) => {
+        //     for (let registration of registrations) {
+        //       //registration.update();
+        //       //registration.sync();
+        //       registration.update();
+        //     }
+        //   });
         window.location.reload(true);
       } else {
         alert("オフラインのため同期できません。");
