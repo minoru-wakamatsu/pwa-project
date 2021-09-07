@@ -54,7 +54,7 @@
 
 <script>
 import axios from "axios";
-import Database from "../indexedDatabase.js";
+import { Database } from "../database.js";
 
 export default {
   name: "HelloWorld",
