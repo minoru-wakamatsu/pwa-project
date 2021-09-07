@@ -1,11 +1,11 @@
 //const { GenerateSW } = require("workbox-webpack-plugin");
-// skipWaiting: true,
-// clientsClaim: false,
 
 module.exports = {
   publicPath: "/pwa-project",
   outputDir: "docs",
   pwa: {
+    skipWaiting: true,
+    clientsClaim: false,
     workboxOptions: {
       runtimeCaching: [
         {
