@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>update7</div>
+    <div>update8</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
