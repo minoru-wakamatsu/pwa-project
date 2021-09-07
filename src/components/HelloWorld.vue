@@ -92,7 +92,8 @@ export default {
           .getRegistrations()
           .then((registrations) => {
             for (let registration of registrations) {
-              registration.update();
+              //registration.update();
+              registration.sync();
             }
           });
       } else {
