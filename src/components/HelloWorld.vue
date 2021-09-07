@@ -145,7 +145,7 @@ export default {
       } else {
         // オフラインの場合は、IndexedDB にリクエストの内容を保存しておく
         // オンラインになったタイミングで手動で保存されているリクエストを実行することで同期する
-        const request = {
+        var request = {
           url: this.apiBaseUrl + "/api/v1/article",
           postdata: {
             title: this.title,
@@ -154,7 +154,7 @@ export default {
         };
 
         console.log(request);
-        const db = new Database();
+        var db = new Database();
         await db.addTodo(request);
       }
     },
