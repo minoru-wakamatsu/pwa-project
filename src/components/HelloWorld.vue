@@ -79,6 +79,8 @@ export default {
     this.db = new Database();
   },
   mounted() {
+    let dt = new Date();
+    alert(dt.getTime());
     this.getArticles();
     this.getUsers();
   },
