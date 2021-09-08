@@ -95,47 +95,33 @@ export default {
         alert("オンラインなのでサーバに保存します。");
 
         // indexedDB に保存しているリクエストを再生してサーバに保存していく
-        let todos = await this.db.getTodos("");
+        // let todos = await this.db.getTodos("");
 
-        console.log(todos);
-        console.log(todos[0].text.url);
-        console.log(todos[0].text.postdata.title);
+        // for (let i = 0; i < todos.length; i++) {
+        //   let id = todos[i].id;
+        //   let url = todos[i].text.url;
+        //   let data = todos[i].text.postdata;
+        //   await axios.post(url, data).then((response) => {
+        //     if (response.status == 200) {
+        //       console.log("保存しました。");
+        //       this.db.deleteTodo(id);
+        //     }
+        //   });
+        // }
 
-        for (let i = 0; i < todos.length; i++) {
-          console.log(todos[i].id);
-          console.log(todos[i].text.url);
-          console.log(todos[i].text.postdata.title);
+        let requests = await this.db.getRequest("");
 
-          let id = todos[i].id;
-          let url = todos[i].text.url;
-          let data = todos[i].text.postdata;
-
+        for (let i = 0; i < requests.length; i++) {
+          let id = requests[i].id;
+          let url = requests[i].text.url;
+          let data = requests[i].text.postdata;
           await axios.post(url, data).then((response) => {
-            if (response.status == 200) {
+            if (response == 200) {
               console.log("保存しました。");
-              this.db.deleteTodo(id);
+              this.db.deleteRequest(id);
             }
           });
         }
-
-        // for (let todo in todos) {
-        //   console.log(todo);
-
-        //   // console.log(todo.id);
-        //   // console.log(todo.text.url);
-        //   // console.log(todo.text.postdata.title);
-
-        //   // await axios
-        //   // .post(this.apiBaseUrl + "/api/v1/article", {
-        //   //   title: this.title,
-        //   //   text: this.text,
-        //   // })
-        //   // .then((response) => {
-        //   //   if (response.status == 200) {
-        //   //     await this.db.deleteTodo(todo[id]);
-        //   //   }
-        //   // });
-        // }
 
         // let idToIndex = {};
         // for (let i = 0; i < this.todos.length; i++) {
