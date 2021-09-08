@@ -81,9 +81,6 @@ export default {
   mounted() {
     this.getArticles();
     this.getUsers();
-
-    // indexeddb を用意する
-    //this.db = new Database();
   },
   methods: {
     isOnline() {
@@ -93,19 +90,54 @@ export default {
         alert("オフライン");
       }
     },
-    onLineOnSave() {
+    async onLineOnSave() {
       if (navigator.onLine) {
         alert("オンラインなのでサーバに保存します。");
-        window.navigator.serviceWorker
-          .getRegistrations()
-          .then((registrations) => {
-            for (let registration of registrations) {
-              //registration.update();
-              //registration.sync();
-              registration.unregister();
-            }
-          });
-        //window.location.reload(true);
+
+        // indexedDB に保存しているリクエストを再生してサーバに保存していく
+        let todos = await this.db.getTodos("");
+
+        console.log(todos);
+
+        // for(let todo in todos) {
+        //   await axios
+        //   .post(this.apiBaseUrl + "/api/v1/article", {
+        //     title: this.title,
+        //     text: this.text,
+        //   })
+        //   .then((response) => {
+        //     if (response.status == 200) {
+        //       await this.db.deleteTodo(todo[id]);
+        //     }
+        //   });
+        // }
+
+      // let idToIndex = {};
+      // for (let i = 0; i < this.todos.length; i++) {
+      //   idToIndex[this.todos[i].id] = i;
+      // }
+      // this.todos = todos.sort((a, b) => {
+      //   // handle new items
+      //   if (idToIndex[a.id] == undefined) {
+      //     return 1;
+      //   } else if (idToIndex[b.id] == undefined) {
+      //     return -1;
+      //   }
+
+      //   return idToIndex[a.id] < idToIndex[b.id] ? -1 : 1;
+      // });
+
+
+        // window.navigator.serviceWorker
+        //   .getRegistrations()
+        //   .then((registrations) => {
+        //     for (let registration of registrations) {
+        //       //registration.update();
+        //       //registration.sync();
+        //       registration.unregister();
+        //     }
+        //   });
+        // //window.location.reload(true);
       } else {
         alert("オフラインのため同期できません。");
       }
@@ -155,8 +187,6 @@ export default {
         };
 
         console.log(request);
-        
-        
         await this.db.addTodo(request);
       }
     },
