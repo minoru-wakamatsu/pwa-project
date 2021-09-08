@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>indexeddb7</div>
+    <div>hoge1</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
@@ -101,18 +101,19 @@ export default {
         console.log(todos[0].text.url);
         console.log(todos[0].text.postdata.title);
 
-        // for(let todo in todos) {
-        //   await axios
-        //   .post(this.apiBaseUrl + "/api/v1/article", {
-        //     title: this.title,
-        //     text: this.text,
-        //   })
-        //   .then((response) => {
-        //     if (response.status == 200) {
-        //       await this.db.deleteTodo(todo[id]);
-        //     }
-        //   });
-        // }
+        for(let todo in todos) {
+          console.log(todo.id);
+          // await axios
+          // .post(this.apiBaseUrl + "/api/v1/article", {
+          //   title: this.title,
+          //   text: this.text,
+          // })
+          // .then((response) => {
+          //   if (response.status == 200) {
+          //     await this.db.deleteTodo(todo[id]);
+          //   }
+          // });
+        }
 
       // let idToIndex = {};
       // for (let i = 0; i < this.todos.length; i++) {
