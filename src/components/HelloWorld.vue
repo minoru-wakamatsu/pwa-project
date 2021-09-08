@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>hoge3</div>
+    <div>hoge4</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
@@ -101,24 +101,30 @@ export default {
         console.log(todos[0].text.url);
         console.log(todos[0].text.postdata.title);
 
-        for (let todo in todos) {
-          console.log(todo);
-
-          // console.log(todo.id);
-          // console.log(todo.text.url);
-          // console.log(todo.text.postdata.title);
-
-          // await axios
-          // .post(this.apiBaseUrl + "/api/v1/article", {
-          //   title: this.title,
-          //   text: this.text,
-          // })
-          // .then((response) => {
-          //   if (response.status == 200) {
-          //     await this.db.deleteTodo(todo[id]);
-          //   }
-          // });
+        for (let i = 0; i < todos.length; i++) {
+          console.log(todos[i]);
+          console.log(todos[i].text.url);
+          console.log(todos[i].text.postdata.title);
         }
+
+        // for (let todo in todos) {
+        //   console.log(todo);
+
+        //   // console.log(todo.id);
+        //   // console.log(todo.text.url);
+        //   // console.log(todo.text.postdata.title);
+
+        //   // await axios
+        //   // .post(this.apiBaseUrl + "/api/v1/article", {
+        //   //   title: this.title,
+        //   //   text: this.text,
+        //   // })
+        //   // .then((response) => {
+        //   //   if (response.status == 200) {
+        //   //     await this.db.deleteTodo(todo[id]);
+        //   //   }
+        //   // });
+        // }
 
         // let idToIndex = {};
         // for (let i = 0; i < this.todos.length; i++) {
