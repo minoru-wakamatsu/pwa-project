@@ -22,16 +22,16 @@ module.exports = {
             },
           },
         },
-        {
-          urlPattern: /https:\/\/f163-2400-2412-2e3-8300-6087-d43e-10a6-b352.ngrok.io\/api\/v1\/.*/,
-          method: "POST",
-          handler: "networkOnly",
-          options: {
-            backgroundSync: {
-              name: "medipad-api-que",
-            },
-          },
-        },
+        // {
+        //   urlPattern: /https:\/\/f163-2400-2412-2e3-8300-6087-d43e-10a6-b352.ngrok.io\/api\/v1\/.*/,
+        //   method: "POST",
+        //   handler: "networkOnly",
+        //   options: {
+        //     backgroundSync: {
+        //       name: "medipad-api-que",
+        //     },
+        //   },
+        // },
       ],
     },
   },

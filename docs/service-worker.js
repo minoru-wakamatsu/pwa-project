@@ -29,4 +29,3 @@ workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/https:\/\/f163-2400-2412-2e3-8300-6087-d43e-10a6-b352.ngrok.io\/api\/v1\/.*/, workbox.strategies.networkFirst({ "cacheName":"medipad-api-cache", plugins: [new workbox.expiration.Plugin({"maxEntries":10,"maxAgeSeconds":300,"purgeOnQuotaError":false}), new workbox.cacheableResponse.Plugin({"statuses":[0,200]})] }), 'GET');
-workbox.routing.registerRoute(/https:\/\/f163-2400-2412-2e3-8300-6087-d43e-10a6-b352.ngrok.io\/api\/v1\/.*/, workbox.strategies.networkOnly({ plugins: [new workbox.backgroundSync.Plugin("medipad-api-que")] }), 'POST');
