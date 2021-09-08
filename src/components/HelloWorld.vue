@@ -116,7 +116,7 @@ export default {
           let url = requests[i].url;
           let data = requests[i].data;
           await axios.post(url, data).then((response) => {
-            if (response == 200) {
+            if (response.status == 200) {
               console.log("保存しました。");
               this.db.deleteRequest(id);
             }
