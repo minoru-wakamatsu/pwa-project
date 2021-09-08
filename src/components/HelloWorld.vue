@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>indexeddb6</div>
+    <div>indexeddb7</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
@@ -99,7 +99,7 @@ export default {
 
         console.log(todos);
         console.log(todos[0].text.url);
-        console.log(todos[0].text.postdata[0].title);
+        console.log(todos[0].text.postdata.title);
 
         // for(let todo in todos) {
         //   await axios
