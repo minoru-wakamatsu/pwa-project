@@ -188,17 +188,29 @@ export default {
       } else {
         // オフラインの場合は、IndexedDB にリクエストの内容を保存しておく
         // オンラインになったタイミングで手動で保存されているリクエストを実行することで同期する
-        var request = {
-          url: this.apiBaseUrl + "/api/v1/article",
-          postdata: {
-            title: this.title,
-            text: this.text,
-          },
-        };
+        // var request = {
+        //   url: this.apiBaseUrl + "/api/v1/article",
+        //   postdata: {
+        //     title: this.title,
+        //     text: this.text,
+        //   },
+        // };
 
-        console.log(request);
-        //await this.db.addTodo(request);
-        await this.db.addRequest(request);
+        // console.log(request);
+        // //await this.db.addTodo(request);
+        // await this.db.addRequest(request);
+
+
+        let url = this.apiBaseUrl + "/api/v1/article";
+        let data = {
+          title: this.title,
+          text: this.text,
+        }
+
+        console.log(url);
+        console.log(data);
+        await this.db.addRequest(url, data);
+
       }
     },
   },

@@ -42,10 +42,20 @@ export class Database extends Dexie {
   //   return this.requests.update(id, { done: done ? 1 : 0 });
   // }
 
-  addRequest(request) {
+  // addRequest(request) {
+  //   let now = new Date();
+  //   let timestamp = now.getTime();
+  //   return this.requests.add({ request: request, timestamp: timestamp });
+  // }
+
+  addRequest(url, data) {
     let now = new Date();
     let timestamp = now.getTime();
-    return this.requests.add({ request: request, timestamp: timestamp });
+    return this.requests.add({
+      url: url,
+      data: data,
+      timestamp: timestamp,
+    });
   }
 
   deleteRequest(requestId) {
