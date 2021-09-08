@@ -109,7 +109,7 @@ export default {
         //   });
         // }
 
-        let requests = await this.db.getRequest("");
+        let requests = await this.db.getRequests("");
 
         for (let i = 0; i < requests.length; i++) {
           let id = requests[i].id;
