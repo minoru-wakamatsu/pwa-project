@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>hoge2</div>
+    <div>hoge3</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
@@ -102,9 +102,12 @@ export default {
         console.log(todos[0].text.postdata.title);
 
         for (let todo in todos) {
-          console.log(todo.id);
-          console.log(todo.text.url);
-          console.log(todo.text.postdata.title);
+          console.log(todo);
+
+          // console.log(todo.id);
+          // console.log(todo.text.url);
+          // console.log(todo.text.postdata.title);
+
           // await axios
           // .post(this.apiBaseUrl + "/api/v1/article", {
           //   title: this.title,
