@@ -95,20 +95,6 @@ export default {
         alert("オンラインなのでサーバに保存します。");
 
         // indexedDB に保存しているリクエストを再生してサーバに保存していく
-        // let todos = await this.db.getTodos("");
-
-        // for (let i = 0; i < todos.length; i++) {
-        //   let id = todos[i].id;
-        //   let url = todos[i].text.url;
-        //   let data = todos[i].text.postdata;
-        //   await axios.post(url, data).then((response) => {
-        //     if (response.status == 200) {
-        //       console.log("保存しました。");
-        //       this.db.deleteTodo(id);
-        //     }
-        //   });
-        // }
-
         let requests = await this.db.getRequests("");
 
         for (let i = 0; i < requests.length; i++) {
@@ -188,18 +174,6 @@ export default {
       } else {
         // オフラインの場合は、IndexedDB にリクエストの内容を保存しておく
         // オンラインになったタイミングで手動で保存されているリクエストを実行することで同期する
-        // var request = {
-        //   url: this.apiBaseUrl + "/api/v1/article",
-        //   postdata: {
-        //     title: this.title,
-        //     text: this.text,
-        //   },
-        // };
-
-        // console.log(request);
-        // //await this.db.addTodo(request);
-        // await this.db.addRequest(request);
-
         let url = this.apiBaseUrl + "/api/v1/article";
         let data = {
           title: this.title,
@@ -209,6 +183,9 @@ export default {
         console.log(url);
         console.log(data);
         await this.db.addRequest(url, data);
+
+        this.message =
+          "オフラインのため一時的に保存しました。オンラインになったら同期ボタンをクリックしてサーバに保存してください。";
       }
     },
   },
