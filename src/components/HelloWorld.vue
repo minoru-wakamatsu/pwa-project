@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>hoge1</div>
+    <div>hoge2</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
@@ -101,8 +101,10 @@ export default {
         console.log(todos[0].text.url);
         console.log(todos[0].text.postdata.title);
 
-        for(let todo in todos) {
+        for (let todo in todos) {
           console.log(todo.id);
+          console.log(todo.text.url);
+          console.log(todo.text.postdata.title);
           // await axios
           // .post(this.apiBaseUrl + "/api/v1/article", {
           //   title: this.title,
@@ -115,21 +117,20 @@ export default {
           // });
         }
 
-      // let idToIndex = {};
-      // for (let i = 0; i < this.todos.length; i++) {
-      //   idToIndex[this.todos[i].id] = i;
-      // }
-      // this.todos = todos.sort((a, b) => {
-      //   // handle new items
-      //   if (idToIndex[a.id] == undefined) {
-      //     return 1;
-      //   } else if (idToIndex[b.id] == undefined) {
-      //     return -1;
-      //   }
+        // let idToIndex = {};
+        // for (let i = 0; i < this.todos.length; i++) {
+        //   idToIndex[this.todos[i].id] = i;
+        // }
+        // this.todos = todos.sort((a, b) => {
+        //   // handle new items
+        //   if (idToIndex[a.id] == undefined) {
+        //     return 1;
+        //   } else if (idToIndex[b.id] == undefined) {
+        //     return -1;
+        //   }
 
-      //   return idToIndex[a.id] < idToIndex[b.id] ? -1 : 1;
-      // });
-
+        //   return idToIndex[a.id] < idToIndex[b.id] ? -1 : 1;
+        // });
 
         // window.navigator.serviceWorker
         //   .getRegistrations()
