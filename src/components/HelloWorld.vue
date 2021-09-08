@@ -113,8 +113,8 @@ export default {
 
         for (let i = 0; i < requests.length; i++) {
           let id = requests[i].id;
-          let url = requests[i].text.url;
-          let data = requests[i].text.postdata;
+          let url = requests[i].request.url;
+          let data = requests[i].request.postdata;
           await axios.post(url, data).then((response) => {
             if (response == 200) {
               console.log("保存しました。");
