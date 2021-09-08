@@ -1,6 +1,5 @@
 import Dexie from "dexie";
 export class Database extends Dexie {
-
   /**
    * コンストラクタ
    */
@@ -8,7 +7,7 @@ export class Database extends Dexie {
     super("database");
 
     this.version(1).stores({
-      requests: "++id,done",
+      requests: "++id,timestamp",
     });
 
     this.requests = this.table("requests");
@@ -39,12 +38,14 @@ export class Database extends Dexie {
     });
   }
 
-  setRequestDone(id, done) {
-    return this.requests.update(id, { done: done ? 1 : 0 });
-  }
+  // setRequestDone(id, done) {
+  //   return this.requests.update(id, { done: done ? 1 : 0 });
+  // }
 
   addRequest(text) {
-    return this.requests.add({ text: text, done: 0 });
+    let now = new Date();
+    let timestamp = now.getTime();
+    return this.requests.add({ text: text, timestamp: timestamp });
   }
 
   deleteRequest(requestId) {
