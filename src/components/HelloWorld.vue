@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <div>hoge4</div>
+    <div>hoge5</div>
     <div>
       <h3>データの取得日：{{ getDate }}</h3>
     </div>
@@ -102,9 +102,18 @@ export default {
         console.log(todos[0].text.postdata.title);
 
         for (let i = 0; i < todos.length; i++) {
-          console.log(todos[i]);
+          console.log(todos[i].id);
           console.log(todos[i].text.url);
           console.log(todos[i].text.postdata.title);
+
+          let url = todos[i].text.url;
+          let data = todos[i].text.postdata;
+
+          await axios.post(url, data).then((response) => {
+            if (response.status == 200) {
+              console.log("保存しました。");
+            }
+          });
         }
 
         // for (let todo in todos) {
