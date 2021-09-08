@@ -197,7 +197,8 @@ export default {
         };
 
         console.log(request);
-        await this.db.addTodo(request);
+        //await this.db.addTodo(request);
+        await this.db.addRequest(request);
       }
     },
   },
