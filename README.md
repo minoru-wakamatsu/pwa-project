@@ -1,6 +1,7 @@
 # pwa-projct
 
 update test
+update test2
 
 ## Project setup
 
